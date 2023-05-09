@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import {getRandom, checkValid, checkWin, play, rps, rpsls} from "../lib/rpsls.js"
+import {getRandom, checkValid, checkWin, play, rps, rpsls} from "./lib/rpsls.js"
 import express from 'express'
 const app = express();
 import minimist from 'minimist'
@@ -17,13 +17,13 @@ app.get('/app', (req, res) => {
 
 // rock paper scissors
 app.get('/app/rps', (req, res) => {
-	res.status(200).send(rps());
+	res.status(200).send(play());
 });
 app.get('/app/rps/play', (req, res) => {
-	res.status(200).send(rps(req.query.shot));
+	res.status(200).send(rps(req.query.turn));
 });
 app.post('/app/rps/play', (req, res) => {
-	res.status(200).send(rps(req.body.shot));
+	res.status(200).send(rps(req.body.turn));
 });
 app.get('/app/rps/play/:arg', (req, res) => {
 	res.status(200).send(rps(req.params.arg));
@@ -34,10 +34,10 @@ app.get('/app/rpsls', (req, res) => {
 	res.status(200).send(rpsls());
 });
 app.get('/app/rpsls/play', (req, res) => {
-	res.status(200).send(rpsls(req.query.shot));
+	res.status(200).send(rpsls(req.query.turn));
 });
 app.post('/app/rpsls/play', (req, res) => {
-	res.status(200).send(rpsls(req.body.shot));
+	res.status(200).send(rpsls(req.body.turn));
 });
 app.get('/app/rpsls/play/:arg', (req, res) => {
 	res.status(200).send(rpsls(req.params.arg));
