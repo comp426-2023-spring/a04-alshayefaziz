@@ -1,0 +1,24 @@
+{
+  "name": "a04-alshayefaziz",
+  "version": "1.0.0",
+  "description": "add on to a03",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp426-2023-spring/a04-alshayefaziz.git"
+  },
+  "author": "alshayefaziz",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/comp426-2023-spring/a04-alshayefaziz/issues"
+  },
+  "homepage": "https://github.com/comp426-2023-spring/a04-alshayefaziz#readme",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.18.2",
+    "minimist": "^1.2.8"
+  }
+}
