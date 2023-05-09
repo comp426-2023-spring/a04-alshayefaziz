@@ -28,6 +28,7 @@ app.post('/app/rps/play', (req, res) => {
 app.get('/app/rps/play/:arg', (req, res) => {
 	res.status(200).send(rps(req.params.arg));
 });
+
 // rock paper scissors lizard spock
 app.get('/app/rpsls', (req, res) => {
 	res.status(200).send(rpsls());
@@ -40,4 +41,13 @@ app.post('/app/rpsls/play', (req, res) => {
 });
 app.get('/app/rpsls/play/:arg', (req, res) => {
 	res.status(200).send(rpsls(req.params.arg));
+});
+
+// calling a nonexistent endpoint
+app.get('*', (req, res) => {
+	res.status(404).send('404 NOT FOUND');
+});
+
+app.listen(PORT, () => {
+	console.log(`App listening on port ${PORT}`);
 });
